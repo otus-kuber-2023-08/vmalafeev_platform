@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: paymentservice
+  name: payment
   labels:
     app: paymentservice
 spec:
@@ -15,5 +15,5 @@ spec:
         app: paymentservice
     spec:
       containers:
-      - name: server
-        image: vmalafeev/web:v0.0.1
+      - name: payment
+        image: vmalafeev/web:0.0.2

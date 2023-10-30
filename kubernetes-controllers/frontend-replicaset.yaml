@@ -16,4 +16,4 @@ spec:
     spec:
       containers:
       - name: server
-        image: vmalafeev/web:v0.0.2
+        image: vmalafeev/web:0.0.2

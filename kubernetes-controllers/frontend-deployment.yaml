@@ -16,12 +16,21 @@ spec:
     spec:
       containers:
       - name: server
-        image: vmalafeev/web:v0.0.1
+        image: vmalafeev/web:0.0.1
         readinessProbe:
           initialDelaySeconds: 10
           httpGet:
             path: "/_healthz"
             port: 8000
             httpHeaders:
-            - name: "Cookie"
-              value: "shop_session-id=x-readiness-probe"
+              - name: "Cookie"
+                value: "shop_session-id=x-readiness-probe"
+        livenessProbe:
+          initialDelaySeconds: 10
+          httpGet:
+            path: "/_healthz"
+            port: 8000
+            httpHeaders:
+              - name: "Cookie"
+                value: "shop_session-id=x-liveness-probe"
+
